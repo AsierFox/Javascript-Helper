@@ -33,7 +33,7 @@ function loadAJAX() {
 	var httpObj = createHttp();
 
 	httpObj.onreadystatechange = function () {
-		if (httpObj.readyState == 4 && httpObj.status == 200) ()) {
+		if (httpObj.readyState == 4 && httpObj.status == 200) {
 			// CODE
 		}
 	};
