@@ -121,6 +121,13 @@ function disableEnter(event) {
 	}
 }
 
+// Update the page every N seconds
+function updateEvery(N) {
+	setTimeout(function () {
+		window.location.reload();
+	}, N);
+}
+
 // Fast Debug
 function u(s) {
 	console.log(s);
