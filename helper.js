@@ -22,23 +22,23 @@ function createHttp () {
 	}
 }
 
-function httpRequest(httpobj, path) {
- 	httpobj.open('GET', path, true);
- 	httpobj.send(null);
+function httpRequest(httpObj, path) {
+ 	httpObj.open('GET', path, true);
+ 	httpObj.send(null);
 }
 
 /* AJAX TEMPLATE
 
 function loadAJAX() {
-	var httpobj = createHttp();
+	var httpObj = createHttp();
 
-	httpobj.onreadystatechange = function () {
-		if (httpobj.readyState == 4 && httpobj.status == 200) {) {
+	httpObj.onreadystatechange = function () {
+		if (httpObj.readyState == 4 && httpObj.status == 200) ()) {
 			// CODE
 		}
 	};
 
-	httpRequest(httpobj, FILEPATH);
+	httpRequest(httpObj, FILEPATH);
 }
 
 */
