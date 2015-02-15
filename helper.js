@@ -27,6 +27,22 @@ function httpRequest(httpobj, path) {
  	httpobj.send(null);
 }
 
+/* AJAX TEMPLATE
+
+function loadAJAX() {
+	var httpobj = createHttp();
+
+	httpobj.onreadystatechange = function () {
+		if (httpobj.readyState == 4 && httpobj.status == 200) {) {
+			// CODE
+		}
+	};
+
+	httpRequest(httpobj, FILEPATH);
+}
+
+*/
+
 ///////////////////////////////////////////////////////////////////////////////
 ////////////////       GoogleMaps Methods     /////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
