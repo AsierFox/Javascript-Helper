@@ -34,7 +34,9 @@ function loadAJAX() {
 
 	httpObj.onreadystatechange = function () {
 		if (httpObj.readyState == 4 && httpObj.status == 200) {
+
 			// CODE
+
 		}
 	};
 
@@ -130,11 +132,16 @@ function getRandomColor() {
 }
 
 // Disable Enter Key
-function disableEnter(event) {
-	if(event.keyCode == 13) {
-		event.preventDefault();
+function disableEnter(e) {
+	if(e.keyCode == 13) {
+		e.preventDefault();
 		return false;
 	}
+}
+
+function isEmail(s) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(s);
 }
 
 // Update the page every N seconds
@@ -148,3 +155,27 @@ function updateEvery(N) {
 function u(s) {
 	console.log(s);
 }
+
+
+///////////////////////////////////////////////////////////////////////////////
+////////////////       jQuery Methods         /////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+// Smooth Scrooll by sections
+$(function() {
+	$('a[href*=#]:not([href=#])').stop().click(function () {
+
+		var name = this.href.substr(this.href.search("#") + 1, this.href.length);
+
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				$('html,body').stop().animate({
+					scrollTop: target.offset().top
+				}, 1000);
+				return false;
+			}
+		}
+	});
+});
