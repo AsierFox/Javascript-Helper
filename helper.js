@@ -122,6 +122,10 @@ function printJSON(json) {
 	});
 }
 
+function getRandomArbitrary(min, max) {
+	return Math.random() * (max - min) + min;
+}
+
 function getRandomColor() {
 	var letters = '0123456789ABCDEF'.split('');
 	var color = '#';
