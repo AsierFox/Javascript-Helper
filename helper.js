@@ -130,6 +130,17 @@ function isEmpty(value) {
 /////////////////////       Util Methods     //////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
+function setObjectObserver(obj, attrName) {
+	Object.defineProperty(obj, attrName, {
+		get: function() {
+			return firstName;
+		},
+		set: function(value) {
+			firstName = value;
+		}
+	});
+}
+
 function printJSON(json) {
 	if (typeof json != 'string') {
 		json = JSON.stringify(json, undefined, 2);
